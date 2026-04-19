@@ -63,7 +63,6 @@ public/
 ## TODOs before launch
 
 - Replace Unsplash placeholder URLs in `src/images.ts` with real property photography / renders
-- Set real `gaMeasurementId` in `src/consts.ts` (currently `G-XXXXXXXXXX`; GA script is gated off while this is the placeholder)
 - Confirm real email at `hello@redwoodsummit.nz` forwards somewhere (currently used in every CTA)
 - Generate a real `/og-default.jpg` (1200×630) — referenced by SEO but not yet committed
 - Fill in bedroom/bathroom/guest specs in `consts.ts` + `pages/lodge.astro` + `pages/cottage.astro` as designs finalize

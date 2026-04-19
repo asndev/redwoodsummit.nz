@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  updated: string;
+}
+
+const { title, description, updated } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="pt-40 pb-16 md:pb-24 px-6 md:px-10 bg-forest-950 border-b border-cream-50/5">
+    <div class="max-w-3xl mx-auto">
+      <span class="eyebrow">Legal</span>
+      <h1 class="mt-5 font-display text-4xl md:text-6xl text-cream-50 leading-[1]">{title}</h1>
+      <p class="mt-5 text-sm text-cream-50/50 uppercase tracking-[0.18em]">Last updated: {updated}</p>
+    </div>
+  </section>
+
+  <article class="section bg-forest-950 pt-16 md:pt-20">
+    <div
+      class="max-w-3xl mx-auto text-cream-50/80 leading-relaxed
+             [&_h2]:font-display [&_h2]:text-2xl md:[&_h2]:text-3xl [&_h2]:text-cream-50 [&_h2]:mt-14 [&_h2]:mb-4
+             [&_h3]:font-display [&_h3]:text-xl [&_h3]:text-gold-300 [&_h3]:mt-10 [&_h3]:mb-3
+             [&_p]:mb-5
+             [&_ul]:mb-5 [&_ul]:pl-5 [&_ul]:list-disc [&_ul]:marker:text-gold-400/60
+             [&_ul_li]:mb-2
+             [&_a]:text-gold-300 [&_a]:underline [&_a]:decoration-gold-400/40 [&_a]:underline-offset-4 hover:[&_a]:text-gold-400
+             [&_strong]:text-cream-50 [&_strong]:font-medium"
+    >
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

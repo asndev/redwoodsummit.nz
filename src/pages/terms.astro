@@ -1,0 +1,71 @@
+---
+import LegalLayout from '../components/LegalLayout.astro';
+import { SITE } from '../consts';
+---
+
+<LegalLayout
+  title="Terms of Use"
+  description={`Terms governing use of the ${SITE.name} marketing website at ${SITE.domain}.`}
+  updated="19 April 2026"
+>
+  <p>
+    These terms (<strong>"Terms"</strong>) govern your use of the Redwood Summit website at
+    <a href={SITE.url}>{SITE.domain}</a> (the <strong>"Site"</strong>). By accessing or using the Site you agree to these Terms. If you do not agree, please do not use the Site.
+  </p>
+
+  <h2>About this Site</h2>
+  <p>
+    Redwood Summit is a short-term accommodation project currently under construction in Rotorua, New Zealand. This Site is a marketing and information resource. As at the date above, <strong>no bookings are being accepted</strong> — the Site allows visitors to register their interest in future stays. Any booking, rate, or availability offer will be governed by separate booking terms provided at the time of booking.
+  </p>
+
+  <h2>Information accuracy</h2>
+  <p>
+    We take reasonable care to ensure information on the Site is accurate and current, but Redwood Summit is under active development. Details — including amenities, property specifications, imagery, and opening timelines — are indicative and subject to change without notice.
+  </p>
+  <p>
+    All imagery shown on the Site prior to the opening date is placeholder or indicative and is not a representation of the final property.
+  </p>
+
+  <h2>Acceptable use</h2>
+  <p>You agree to use the Site only for lawful purposes. You agree not to:</p>
+  <ul>
+    <li>attempt to gain unauthorized access to the Site or any underlying systems</li>
+    <li>scrape, crawl, or otherwise extract content in a manner that burdens the Site's infrastructure</li>
+    <li>copy, reproduce, or redistribute Site content (other than for personal, non-commercial reference) without our prior written permission</li>
+    <li>use the Site to transmit malware, spam, or unlawful content</li>
+    <li>impersonate Redwood Summit or misrepresent your affiliation with us</li>
+  </ul>
+
+  <h2>Intellectual property</h2>
+  <p>
+    All content on the Site — including text, logos, graphics, layout, and source code — is owned by or licensed to Redwood Summit and is protected by copyright, trade mark, and other intellectual property laws. Some photography is used under the Unsplash License as placeholder imagery and remains the property of the respective photographers.
+  </p>
+
+  <h2>Links to third-party sites</h2>
+  <p>
+    The Site may link to third-party websites. We are not responsible for the content, policies, or practices of any third-party site, and links do not constitute endorsement.
+  </p>
+
+  <h2>Limitation of liability</h2>
+  <p>
+    To the maximum extent permitted by law, Redwood Summit, its owners, operators, contractors, and agents are not liable for any indirect, incidental, consequential, or special damages arising from your use of — or inability to use — the Site, or from reliance on any information published on the Site.
+  </p>
+  <p>
+    Nothing in these Terms limits any rights or remedies you have under the New Zealand Consumer Guarantees Act 1993, the Fair Trading Act 1986, or other laws that cannot be lawfully excluded.
+  </p>
+
+  <h2>Changes to these Terms</h2>
+  <p>
+    We may update these Terms from time to time. The "Last updated" date at the top of this page reflects the most recent change. Continued use of the Site after changes constitutes acceptance of the updated Terms.
+  </p>
+
+  <h2>Governing law</h2>
+  <p>
+    These Terms are governed by the laws of New Zealand. Any dispute arising from or relating to the Site or these Terms is subject to the exclusive jurisdiction of the courts of New Zealand.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    Questions about these Terms? Email <a href={`mailto:${SITE.mailto}`}>{SITE.mailto}</a>.
+  </p>
+</LegalLayout>

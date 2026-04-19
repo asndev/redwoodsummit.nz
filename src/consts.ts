@@ -15,8 +15,7 @@ export const SITE = {
     lat: -38.1595,
     lng: 176.2666,
   },
-  // TODO: replace with real GA4 Measurement ID once provisioned
-  gaMeasurementId: 'G-XXXXXXXXXX',
+  gaMeasurementId: 'G-CNBMJG5T1L',
   // Opening window — update as construction progresses
   openingYear: 2027,
 };

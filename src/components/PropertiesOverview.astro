@@ -1,0 +1,57 @@
+---
+import { PROPERTIES } from '../consts';
+import { IMG } from '../images';
+
+const images: Record<string, string> = {
+  lodge: IMG.lodgeExterior,
+  cottage: IMG.cottage,
+};
+---
+
+<section id="properties" class="section bg-forest-900 border-t border-cream-50/5">
+  <div class="container-prose">
+    <div class="max-w-3xl">
+      <span class="eyebrow">Two Residences</span>
+      <h2 class="mt-5 text-4xl md:text-5xl lg:text-6xl text-cream-50">
+        One destination. <span class="italic text-gold-300">Two ways to stay.</span>
+      </h2>
+      <p class="mt-6 text-lg text-cream-50/70 leading-relaxed">
+        The Lodge is our flagship, tuned for riders and mountain bike crews. The Cottage is the family counterpart — quieter, warmer, with the same direct-to-trail access.
+      </p>
+    </div>
+
+    <div class="mt-14 grid md:grid-cols-2 gap-6 md:gap-8">
+      {
+        PROPERTIES.map((p) => (
+          <a
+            href={`/${p.slug}`}
+            class="group relative flex flex-col rounded-2xl overflow-hidden bg-forest-800 border border-cream-50/5 transition hover:border-gold-400/40"
+          >
+            <div class="aspect-[4/3] overflow-hidden">
+              <img
+                src={images[p.slug]}
+                alt={`${p.name} — placeholder photography`}
+                class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="p-8 md:p-10 flex flex-col gap-4">
+              <div class="flex items-center gap-3">
+                <span class="text-[10px] uppercase tracking-[0.22em] text-gold-400">{p.tier}</span>
+                <span class="h-px flex-1 bg-cream-50/10" />
+                <span class="text-xs text-cream-50/50">Sleeps {p.sleeps}</span>
+              </div>
+              <h3 class="text-3xl md:text-4xl text-cream-50">{p.name}</h3>
+              <p class="text-cream-50/70 leading-relaxed">{p.summary}</p>
+              <span class="mt-2 inline-flex items-center gap-2 text-sm text-gold-300 group-hover:gap-3 transition-all">
+                Explore {p.name.split(' ').slice(-1)}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+              </span>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

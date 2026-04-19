@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://redwoodsummit.nz/sitemap-index.xml

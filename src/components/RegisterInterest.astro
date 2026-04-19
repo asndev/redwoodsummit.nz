@@ -1,0 +1,41 @@
+---
+import { SITE } from '../consts';
+import { IMG } from '../images';
+
+const mailtoHref = `mailto:${SITE.mailto}?subject=${encodeURIComponent(
+  'Register Interest — Redwood Summit'
+)}&body=${encodeURIComponent(
+  "Kia ora,\n\nI'd like to register my interest in staying at Redwood Summit. Please notify me when bookings open.\n\nPreferred dates (if known):\nGroup size:\nRiding level:\nLodge / Cottage / Either:\n\nThanks!"
+)}`;
+---
+
+<section id="register" class="relative isolate section overflow-hidden">
+  <div class="absolute inset-0 -z-10">
+    <div
+      class="absolute inset-0 bg-cover bg-center"
+      style={`background-image: url(${IMG.forestMist});`}
+      aria-hidden="true"
+    />
+    <div class="absolute inset-0 bg-forest-950/85" />
+  </div>
+
+  <div class="container-prose text-center max-w-3xl mx-auto">
+    <span class="eyebrow">Be First In</span>
+    <h2 class="mt-5 text-4xl md:text-5xl lg:text-6xl text-cream-50">
+      Opening {SITE.openingYear}. <br class="hidden md:block" />
+      <span class="italic text-gold-300">Rider priority before public listings.</span>
+    </h2>
+    <p class="mt-6 text-lg text-cream-50/75 leading-relaxed">
+      We'll contact our interest list before we go live on Airbnb — with direct-booking rates and first pick of dates. No spam, just a message when it matters.
+    </p>
+
+    <a href={mailtoHref} class="mt-10 btn-primary">
+      Register your interest
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+    </a>
+
+    <p class="mt-6 text-xs text-cream-50/40">
+      Or email us directly: <a href={`mailto:${SITE.mailto}`} class="text-gold-300 hover:underline">{SITE.mailto}</a>
+    </p>
+  </div>
+</section>

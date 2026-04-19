@@ -1,0 +1,42 @@
+---
+import { IMG } from '../images';
+
+const shots = [
+  { src: IMG.lodgeInterior, alt: 'Warm timber interior with forest views — placeholder', span: 'col-span-2 row-span-2' },
+  { src: IMG.mtbAction, alt: 'Mountain biker in the redwoods — placeholder', span: 'col-span-1 row-span-1' },
+  { src: IMG.spa, alt: 'Hot spa and recovery lounge — placeholder', span: 'col-span-1 row-span-1' },
+  { src: IMG.forestMist, alt: 'Forest mist through the canopy — placeholder', span: 'col-span-1 row-span-1' },
+  { src: IMG.bikeVault, alt: 'Secure bike vault — placeholder', span: 'col-span-1 row-span-1' },
+];
+---
+
+<section class="section bg-forest-900 border-t border-cream-50/5">
+  <div class="container-prose">
+    <div class="flex items-end justify-between flex-wrap gap-6">
+      <div class="max-w-2xl">
+        <span class="eyebrow">A Glimpse</span>
+        <h2 class="mt-5 text-4xl md:text-5xl text-cream-50">The feel of a stay.</h2>
+      </div>
+      <p class="text-sm text-cream-50/50 max-w-xs">
+        Imagery shown is placeholder — construction is underway and final photography will replace these as rooms are completed.
+      </p>
+    </div>
+
+    <div class="mt-12 grid grid-cols-2 md:grid-cols-4 auto-rows-[180px] md:auto-rows-[240px] gap-3 md:gap-4">
+      {
+        shots.map((s) => (
+          <figure class:list={["relative overflow-hidden rounded-xl group", s.span]}>
+            <img
+              src={s.src}
+              alt={s.alt}
+              class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-forest-950/40 to-transparent opacity-0 group-hover:opacity-100 transition" />
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

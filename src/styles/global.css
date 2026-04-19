@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  /* Forest greens — primary brand */
+  --color-forest-50: #f1f6f2;
+  --color-forest-100: #dde9df;
+  --color-forest-200: #bcd3c1;
+  --color-forest-300: #90b59a;
+  --color-forest-400: #5f8f6e;
+  --color-forest-500: #3f7351;
+  --color-forest-600: #2d5a3f;
+  --color-forest-700: #234634;
+  --color-forest-800: #1a3528;
+  --color-forest-900: #11241b;
+  --color-forest-950: #0a1810;
+
+  /* Redwood / rust accent */
+  --color-redwood-50: #fbf1ec;
+  --color-redwood-100: #f4dcd1;
+  --color-redwood-200: #e7b59e;
+  --color-redwood-300: #d78a68;
+  --color-redwood-400: #c4643f;
+  --color-redwood-500: #a64d2a;
+  --color-redwood-600: #873c22;
+  --color-redwood-700: #6a2f1c;
+  --color-redwood-800: #4f2417;
+  --color-redwood-900: #361811;
+
+  /* Warm cream / parchment */
+  --color-cream-50: #fbf8f1;
+  --color-cream-100: #f5efdf;
+  --color-cream-200: #eee3c4;
+  --color-cream-300: #e2d19e;
+  --color-cream-400: #d0b872;
+
+  /* Gold highlight (premium accent) */
+  --color-gold-300: #d4b978;
+  --color-gold-400: #c8a96a;
+  --color-gold-500: #b68f4c;
+  --color-gold-600: #96713a;
+
+  /* Typography */
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-forest-950);
+    color: var(--color-cream-50);
+  }
+  body {
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  ::selection {
+    background: var(--color-gold-400);
+    color: var(--color-forest-950);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-full px-7 py-3.5 bg-gold-400 text-forest-950 font-medium tracking-wide transition hover:bg-gold-300 hover:shadow-lg hover:shadow-gold-500/20;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 rounded-full px-7 py-3.5 border border-cream-50/30 text-cream-50 font-medium tracking-wide transition hover:border-gold-400 hover:text-gold-300;
+  }
+  .eyebrow {
+    @apply inline-block uppercase tracking-[0.2em] text-xs font-medium text-gold-400;
+  }
+  .section {
+    @apply py-20 md:py-28 px-6 md:px-10;
+  }
+  .container-prose {
+    @apply max-w-6xl mx-auto;
+  }
+}

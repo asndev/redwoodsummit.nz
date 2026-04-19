@@ -1,0 +1,86 @@
+---
+import { SITE } from '../consts';
+
+const faqs = [
+  {
+    q: 'When will Redwood Summit be open for bookings?',
+    a: `Construction is underway and we're targeting an opening in ${SITE.openingYear}. Register your interest to be notified first and get priority for direct bookings.`,
+  },
+  {
+    q: 'How close are the mountain bike trails?',
+    a: 'Redwood Summit sits within the Redwood Park development — the Whakarewarewa Forest trail network is effectively on your doorstep. Roll out from the property and into the trees.',
+  },
+  {
+    q: 'How many people can stay?',
+    a: 'The Lodge is designed to comfortably sleep 8+ across multiple bedrooms — ideal for crews, teams, and extended groups. The Cottage is more family-scaled; final configurations will be confirmed closer to opening.',
+  },
+  {
+    q: 'Is there secure bike storage?',
+    a: 'Yes. A purpose-built bike vault on-site, plus a workshop-grade wash station with hose, stands, lighting, and tools. Bring your best build without worry.',
+  },
+  {
+    q: 'What about recovery between rides?',
+    a: 'A dedicated recovery area with an outdoor hot spa overlooking the forest. Warm water, cold air, and a view of the canopy you were riding through an hour earlier.',
+  },
+  {
+    q: 'Are there two separate properties?',
+    a: 'Yes — Redwood Summit Lodge (our premium, rider-focused flagship) and Redwood Summit Cottage (a calmer, family-oriented residence). Book one, or both for larger groups.',
+  },
+  {
+    q: 'Will you be on Airbnb?',
+    a: 'We plan to list on Airbnb and similar platforms, but will also provide direct bookings. Register your interest to get direct-booking access first.',
+  },
+  {
+    q: 'Where exactly is the property?',
+    a: 'Rotorua, New Zealand — within the Redwood Park development, immediately adjacent to the Whakarewarewa Forest. Rotorua Airport and the city centre are both a short drive away.',
+  },
+];
+---
+
+<section id="faq" class="section bg-forest-950 border-t border-cream-50/5">
+  <div class="container-prose grid md:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20">
+    <div>
+      <span class="eyebrow">Questions</span>
+      <h2 class="mt-5 text-4xl md:text-5xl text-cream-50">
+        Things riders <span class="italic text-gold-300">ask us.</span>
+      </h2>
+      <p class="mt-6 text-cream-50/70 leading-relaxed">
+        Can't find an answer? Send us a note — we read every one.
+      </p>
+    </div>
+
+    <div class="divide-y divide-cream-50/10">
+      {
+        faqs.map((f, i) => (
+          <details class="group py-5" open={i === 0}>
+            <summary class="flex items-start justify-between gap-6 cursor-pointer list-none">
+              <h3 class="font-display text-lg md:text-xl text-cream-50">{f.q}</h3>
+              <span
+                class="shrink-0 mt-1 h-6 w-6 rounded-full border border-gold-400/40 text-gold-300 grid place-items-center transition group-open:rotate-45"
+                aria-hidden="true"
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 5v14M5 12h14" stroke-linecap="round" />
+                </svg>
+              </span>
+            </summary>
+            <p class="mt-3 text-cream-50/70 leading-relaxed">{f.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  })}
+/>

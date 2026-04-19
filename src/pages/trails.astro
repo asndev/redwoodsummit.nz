@@ -1,0 +1,110 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import RegisterInterest from '../components/RegisterInterest.astro';
+import { IMG } from '../images';
+
+const title = 'The Trails — Whakarewarewa Forest, Rotorua';
+const description =
+  'Why Rotorua is one of the best mountain biking destinations in the world. A guide to the Whakarewarewa Redwoods trail network, Crankworx, and why Redwood Summit puts you right next door.';
+
+const grades = [
+  {
+    name: 'Green — Easy',
+    body:
+      'Perfect warm-up laps and family loops. Smooth, flowy lines through towering redwood stands — some of the most photogenic easy singletrack anywhere.',
+  },
+  {
+    name: 'Blue — Intermediate',
+    body:
+      'The heart of the network. Fast, loamy descents, perfectly bermed corners and natural features that reward good line choice without demanding it.',
+  },
+  {
+    name: 'Black & Double Black',
+    body:
+      'World-class technical terrain. Rock gardens, steep chutes, drops, and the Crankworx-tested gravity lines that have put Rotorua on the global MTB map.',
+  },
+];
+
+const highlights = [
+  { t: '180+ km of singletrack', d: 'Purpose-built, meticulously maintained by the local trail crews and Rotorua Mountain Bike Club.' },
+  { t: 'Home of Crankworx Rotorua', d: 'Every March, the MTB world comes to the Redwoods. Ride the same trails the pros race.' },
+  { t: 'Volcanic loam', d: 'Rotorua sits on geothermal volcanic soil — the dirt is fast, grippy, forgiving, and unique in the world.' },
+  { t: 'Shuttle & uplift network', d: 'Local operators run trail shuttles and the Skyline Gondola offers lift-access downhill minutes away.' },
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <PageHero
+    eyebrow="The Trails"
+    title="Why riders fly across the world"
+    italic="to ride the Redwoods."
+    lede="Whakarewarewa Forest — known everywhere as 'the Redwoods' — is consistently ranked among the best mountain bike destinations on earth. Redwood Summit puts you on its doorstep."
+    image={IMG.forestTrail}
+  />
+
+  <section class="section bg-forest-950">
+    <div class="container-prose max-w-4xl">
+      <span class="eyebrow">A Short History</span>
+      <h2 class="mt-5 text-3xl md:text-5xl text-cream-50">
+        A forest with a <span class="italic text-gold-300">century of story.</span>
+      </h2>
+      <div class="mt-8 space-y-5 text-cream-50/75 leading-relaxed text-lg">
+        <p>
+          In 1901, after native forests around Rotorua were being exhausted by settlement, foresters planted a trial stand of Californian redwoods — Sequoia sempervirens — alongside 170 other exotic species. The redwoods thrived in Rotorua's volcanic soil and mild climate, growing into the towering cathedral of trees that defines Whakarewarewa Forest today.
+        </p>
+        <p>
+          Decades later, local riders began carving singletrack between those trunks. What started as a handful of trails has grown, with the Rotorua Mountain Bike Club and local trail builders, into one of the most complete, celebrated mountain bike networks in the world.
+        </p>
+        <p>
+          The name "Redwood Summit" is our nod to that forest — and a promise to put our guests as close to it as a stay can get.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-forest-900 border-t border-cream-50/5">
+    <div class="container-prose">
+      <div class="max-w-3xl">
+        <span class="eyebrow">Grades for Every Rider</span>
+        <h2 class="mt-5 text-3xl md:text-5xl text-cream-50">From first laps to world-cup lines.</h2>
+      </div>
+      <div class="mt-12 grid md:grid-cols-3 gap-4">
+        {
+          grades.map((g) => (
+            <article class="p-8 rounded-2xl bg-forest-950/50 border border-cream-50/5">
+              <h3 class="font-display text-2xl text-gold-300">{g.name}</h3>
+              <p class="mt-4 text-cream-50/70 leading-relaxed">{g.body}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-forest-950 border-t border-cream-50/5">
+    <div class="container-prose grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="rounded-2xl overflow-hidden aspect-[4/3]">
+        <img src={IMG.mtbAction} alt="Rider in the Redwoods — placeholder" class="h-full w-full object-cover" loading="lazy" />
+      </div>
+      <div>
+        <span class="eyebrow">Why It's Special</span>
+        <h2 class="mt-5 text-3xl md:text-5xl text-cream-50">
+          More than just a network — <span class="italic text-gold-300">a rider's pilgrimage.</span>
+        </h2>
+        <ul class="mt-8 space-y-6">
+          {
+            highlights.map((h) => (
+              <li>
+                <h3 class="font-display text-xl text-cream-50">{h.t}</h3>
+                <p class="mt-1 text-cream-50/70 leading-relaxed">{h.d}</p>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <RegisterInterest />
+</BaseLayout>

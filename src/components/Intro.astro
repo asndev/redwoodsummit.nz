@@ -1,0 +1,36 @@
+---
+import { IMG } from '../images';
+---
+
+<section class="section bg-forest-950">
+  <div class="container-prose grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+    <div>
+      <span class="eyebrow">The Story</span>
+      <h2 class="mt-5 text-4xl md:text-5xl lg:text-6xl text-cream-50">
+        Built in the shadow of the <span class="italic text-gold-300">Redwoods</span>.
+      </h2>
+      <div class="mt-8 space-y-5 text-cream-50/75 leading-relaxed text-lg">
+        <p>
+          Redwood Summit sits inside the Redwood Park development in Rotorua — moments from the Whakarewarewa Forest, one of the world’s great mountain biking destinations and home of Crankworx Rotorua.
+        </p>
+        <p>
+          We're building two properties designed around the rhythm of the ride: wake in the forest, roll out onto 180+ km of trails, return to a spa-warmed recovery lounge and a crew dinner under timbered ceilings.
+        </p>
+        <p>
+          Every detail — from the bike vault to the wash bay to the views from your bed — is there because it earns its place for riders.
+        </p>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="aspect-[4/5] rounded-2xl overflow-hidden">
+        <img
+          src={IMG.forestMorning}
+          alt="Morning light through the Whakarewarewa Redwood forest"
+          class="h-full w-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,73 @@
+---
+import { SITE } from '../consts';
+import { IMG } from '../images';
+
+const mailtoHref = `mailto:${SITE.mailto}?subject=${encodeURIComponent(
+  'Register Interest — Redwood Summit'
+)}&body=${encodeURIComponent(
+  "Kia ora,\n\nI'd like to register my interest in staying at Redwood Summit. Please notify me when bookings open.\n\nPreferred dates (if known):\nGroup size:\nRiding level:\n\nThanks!"
+)}`;
+---
+
+<section class="relative isolate overflow-hidden">
+  <!-- Background image as a real <img> for reliable loading -->
+  <img
+    src={IMG.hero}
+    alt=""
+    aria-hidden="true"
+    class="absolute inset-0 h-full w-full object-cover"
+    loading="eager"
+    fetchpriority="high"
+  />
+
+  <!-- Full-coverage dark overlay — bulletproof contrast -->
+  <div
+    class="absolute inset-0 bg-forest-950/75"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Additional bottom fade to blend into next section -->
+  <div
+    class="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-b from-transparent to-forest-950"
+    aria-hidden="true"
+  ></div>
+
+  <!-- Content -->
+  <div class="relative z-10 container-prose w-full px-6 md:px-10 pt-40 md:pt-48 pb-24 md:pb-32">
+    <span class="eyebrow">Rotorua · Redwood Park · New Zealand</span>
+
+    <h1 class="mt-5 font-display text-5xl md:text-7xl lg:text-8xl leading-[0.95] text-cream-50 max-w-5xl">
+      The luxury hub for<br />
+      <span class="italic text-gold-300">Rotorua mountain biking.</span>
+    </h1>
+
+    <p class="mt-6 md:mt-8 max-w-2xl text-lg md:text-xl text-cream-50/85 leading-relaxed">
+      A premium lodge built for riders — steps from the Whakarewarewa Redwoods, with a secure bike vault, wash bay, and hot spa recovery lounge. Opening {SITE.openingYear}.
+    </p>
+
+    <div class="mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4">
+      <a href={mailtoHref} class="btn-primary">
+        Register your interest
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </a>
+      <a href="/lodge" class="btn-secondary">Explore the Lodge</a>
+    </div>
+
+    <!-- Key facts strip -->
+    <dl class="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-x-6 gap-y-6 max-w-4xl">
+      {
+        [
+          ['Sleeps', '8+'],
+          ['Bike vault', 'Secure'],
+          ['Trail access', 'Direct'],
+          ['Opening', String(SITE.openingYear)],
+        ].map(([label, value]) => (
+          <div class="border-l border-gold-400/40 pl-4">
+            <dt class="text-[11px] uppercase tracking-[0.22em] text-cream-50/60">{label}</dt>
+            <dd class="mt-1 font-display text-2xl md:text-3xl text-cream-50">{value}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>

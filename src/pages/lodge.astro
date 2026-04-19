@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import RegisterInterest from '../components/RegisterInterest.astro';
+import { IMG } from '../images';
+import { SITE } from '../consts';
+
+const title = 'Redwood Summit Lodge';
+const description = `Redwood Summit Lodge — our premium mountain bike lodge in Rotorua, NZ. Sleeps 8+, built for riders and crews. Bike vault, wash station, hot spa, forest views. Opening ${SITE.openingYear}.`;
+
+const features = [
+  { t: 'Sleeps 8+', d: 'Multiple bedrooms configured for crews — private retreat and shared space in balance.' },
+  { t: 'The Bike Vault', d: 'Secure, insured, purpose-built storage. Lock your dream build; sleep easy.' },
+  { t: 'Wash & Workshop', d: 'Covered wash bay with hose, stands, lighting and tools. Ride clean, ride dialed.' },
+  { t: 'Hot Spa Recovery', d: 'Outdoor spa overlooking the forest, plus a quiet recovery lounge.' },
+  { t: 'Forest-framed Glass', d: 'Floor-to-ceiling windows in the living areas — the Redwoods are the artwork.' },
+  { t: 'Full Kitchen + Dining', d: 'Designed for crew dinners. Pro-grade appliances, long table, long conversations.' },
+];
+
+const finalSpecs = [
+  ['Bedrooms', 'TBD — confirmed pre-opening'],
+  ['Bathrooms', 'TBD — confirmed pre-opening'],
+  ['Max guests', '8+'],
+  ['Bike capacity', 'TBD (expect full crew)'],
+  ['Opening', `${SITE.openingYear}`],
+  ['Rates', 'Inquire for rates and availability'],
+];
+---
+
+<BaseLayout title={title} description={description}>
+  <PageHero
+    eyebrow="Premium Residence"
+    title="The Lodge is built"
+    italic="for the crew that came to ride."
+    lede="Our flagship property at Redwood Summit — sleeping 8+, tuned for mountain bike teams, enthusiasts, and the kind of trip you'll talk about for years."
+    image={IMG.lodgeExterior}
+  />
+
+  <section class="section bg-forest-950">
+    <div class="container-prose grid md:grid-cols-2 gap-12 md:gap-20 items-start">
+      <div>
+        <span class="eyebrow">The Vision</span>
+        <h2 class="mt-5 text-3xl md:text-5xl text-cream-50">
+          A home for the days <span class="italic text-gold-300">you'll remember.</span>
+        </h2>
+        <div class="mt-8 space-y-5 text-cream-50/75 leading-relaxed text-lg">
+          <p>
+            Redwood Summit Lodge is being built for riders — pro athletes visiting Crankworx, weekend-warrior crews from across Aotearoa, teams chasing the best trails in the world. Everything starts with the question: does this serve the ride?
+          </p>
+          <p>
+            The answer shapes the architecture. Oversized mudroom. Bike vault on the main floor, not hidden in a garage. Spa within stumbling distance of the living room. Dining table long enough for eight tired, grinning riders.
+          </p>
+          <p>
+            And at the same time: this is a premium stay. Natural timber, warm light, deep seating, quiet rooms. The kind of place your non-riding partner is happy you booked too.
+          </p>
+        </div>
+      </div>
+
+      <div class="sticky top-10 space-y-6">
+        <div class="rounded-2xl overflow-hidden aspect-[4/5]">
+          <img src={IMG.lodgeInterior} alt="Warm premium lodge interior — placeholder" class="h-full w-full object-cover" loading="lazy" />
+        </div>
+        <dl class="rounded-2xl border border-cream-50/10 bg-forest-900/50 p-8 grid grid-cols-2 gap-y-5 gap-x-6">
+          {
+            finalSpecs.map(([k, v]) => (
+              <div>
+                <dt class="text-[11px] uppercase tracking-[0.2em] text-cream-50/50">{k}</dt>
+                <dd class="mt-1 text-cream-50 font-display text-lg">{v}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-forest-900 border-t border-cream-50/5">
+    <div class="container-prose">
+      <div class="max-w-3xl">
+        <span class="eyebrow">Designed Around the Ride</span>
+        <h2 class="mt-5 text-3xl md:text-5xl text-cream-50">What makes the Lodge, the Lodge.</h2>
+      </div>
+      <ul class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {
+          features.map((f) => (
+            <li class="p-8 rounded-2xl bg-forest-950/50 border border-cream-50/5">
+              <h3 class="font-display text-xl text-gold-300">{f.t}</h3>
+              <p class="mt-3 text-cream-50/70 leading-relaxed">{f.d}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <RegisterInterest />
+</BaseLayout>

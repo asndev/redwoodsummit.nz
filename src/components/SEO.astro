@@ -1,0 +1,83 @@
+---
+import { SITE } from '../consts';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  path?: string;
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = SITE.description,
+  image = '/og-default.jpg',
+  path = Astro.url.pathname,
+  noindex = false,
+} = Astro.props;
+
+const fullTitle = title ? `${title} — ${SITE.name}` : `${SITE.name} — ${SITE.tagline}`;
+const canonical = new URL(path, SITE.url).toString();
+const ogImage = new URL(image, SITE.url).toString();
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LodgingBusiness',
+  name: SITE.name,
+  description: SITE.description,
+  url: SITE.url,
+  image: ogImage,
+  priceRange: 'Premium',
+  telephone: '',
+  email: SITE.mailto,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: SITE.location.locality,
+    addressRegion: SITE.location.region,
+    addressCountry: SITE.location.country,
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: SITE.location.lat,
+    longitude: SITE.location.lng,
+  },
+  amenityFeature: [
+    { '@type': 'LocationFeatureSpecification', name: 'Secure Bike Vault', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Bike Wash Station', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Hot Spa Recovery Area', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Forest Views', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Sleeps 8+', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Direct Trail Access', value: true },
+  ],
+  nearbyAttraction: {
+    '@type': 'TouristAttraction',
+    name: 'Whakarewarewa Forest (The Redwoods)',
+    description:
+      'World-renowned mountain biking destination with 180+ km of trails, host of Crankworx Rotorua.',
+  },
+};
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonical} />
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+
+<!-- OpenGraph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={SITE.name} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:locale" content="en_NZ" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<!-- Structured data -->
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

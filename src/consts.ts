@@ -36,7 +36,7 @@ export const PROPERTIES = [
     name: 'Redwood Summit Cottage',
     tier: 'Family',
     tagline: 'A calmer retreat for families visiting the Redwoods.',
-    sleeps: 'TBD',
+    sleeps: '4-6',
     summary:
       'Our second property at Redwood Summit — a more family-oriented residence with the same direct forest access, designed for relaxed stays and shared time in one of New Zealand’s most iconic forests.',
     audience: 'Families and smaller groups',

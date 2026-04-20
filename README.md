@@ -67,4 +67,3 @@ public/
 - Generate a real `/og-default.jpg` (1200×630) — referenced by SEO but not yet committed
 - Fill in bedroom/bathroom/guest specs in `consts.ts` + `pages/lodge.astro` + `pages/cottage.astro` as designs finalize
 - Update approximate geo coordinates in `consts.ts` once the property location is surveyed
-- Add `/privacy` and `/terms` pages before commercial launch

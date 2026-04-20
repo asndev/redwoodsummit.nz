@@ -11,8 +11,8 @@
 
 ## Properties
 
-- [Redwood Summit Lodge](https://redwoodsummit.nz/lodge): Premium residence designed for mountain bike crews, teams, and enthusiasts. Sleeps 8+. Features secure bike vault, workshop-grade wash station, hot spa recovery lounge, forest-framed living spaces. Final bedroom/bathroom configuration TBD.
-- [Redwood Summit Cottage](https://redwoodsummit.nz/cottage): Family-oriented residence with direct forest access. Final configuration TBD.
+- [Redwood Summit Lodge](https://redwoodsummit.nz/the-lodge): Premium residence designed for mountain bike crews, teams, and enthusiasts. Sleeps 8+. Features secure bike vault, workshop-grade wash station, hot spa recovery lounge, forest-framed living spaces. Final bedroom/bathroom configuration TBD.
+- [Redwood Summit Cottage](https://redwoodsummit.nz/the-cottage): Family-oriented residence with direct forest access. Final configuration TBD.
 
 ## Key Amenities
 
@@ -37,6 +37,6 @@
 ## Links
 
 - Home: https://redwoodsummit.nz/
-- The Lodge: https://redwoodsummit.nz/lodge
-- The Cottage: https://redwoodsummit.nz/cottage
+- The Lodge: https://redwoodsummit.nz/the-lodge
+- The Cottage: https://redwoodsummit.nz/the-cottage
 - The Trails: https://redwoodsummit.nz/trails

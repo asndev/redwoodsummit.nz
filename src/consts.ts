@@ -22,7 +22,7 @@ export const SITE = {
 
 export const PROPERTIES = [
   {
-    slug: 'lodge',
+    slug: 'the-lodge',
     name: 'Redwood Summit Lodge',
     tier: 'Premium',
     tagline: 'Built for mountain bike crews, pro riders, and teams.',
@@ -32,7 +32,7 @@ export const PROPERTIES = [
     audience: 'MTB enthusiasts, teams, crews of friends',
   },
   {
-    slug: 'cottage',
+    slug: 'the-cottage',
     name: 'Redwood Summit Cottage',
     tier: 'Family',
     tagline: 'A calmer retreat for families visiting the Redwoods.',

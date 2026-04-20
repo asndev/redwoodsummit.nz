@@ -49,8 +49,8 @@ src/
     PageHero.astro       # reusable subpage hero
   pages/
     index.astro          # /
-    lodge.astro          # /lodge — premium residence
-    cottage.astro        # /cottage — family residence
+    the-lodge.astro      # /the-lodge — premium residence
+    the-cottage.astro    # /the-cottage — family residence
     trails.astro         # /trails — Redwoods/MTB story (SEO)
 public/
   CNAME                  # redwoodsummit.nz
@@ -65,5 +65,5 @@ public/
 - Replace Unsplash placeholder URLs in `src/images.ts` with real property photography / renders
 - Confirm real email at `hello@redwoodsummit.nz` forwards somewhere (currently used in every CTA)
 - Generate a real `/og-default.jpg` (1200×630) — referenced by SEO but not yet committed
-- Fill in bedroom/bathroom/guest specs in `consts.ts` + `pages/lodge.astro` + `pages/cottage.astro` as designs finalize
+- Fill in bedroom/bathroom/guest specs in `consts.ts` + `pages/the-lodge.astro` + `pages/the-cottage.astro` as designs finalize
 - Update approximate geo coordinates in `consts.ts` once the property location is surveyed
